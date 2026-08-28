@@ -1,21 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({
-    variable: "--font-sans",
-    subsets: ["latin"],
-});
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-    title: "Mykhailo Huseinov ",
-    description: "Bli kjent med Mykhailo Huseinov og hans hjertesaker som kandidat",
+    title: "Gympartiet | Mykhailo Huseinov",
+    description: "Stem Gympartiet for en mer aktiv og engasjerende skolehverdag.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
-        <html lang="nb" className={`${inter.variable} scroll-smooth`}>
+        <html lang="nb" className={cn("scroll-smooth", "font-sans", geist.variable)}>
             <body className="bg-white text-[#241533] [font-family:var(--font-sans)]" suppressHydrationWarning>
                 <header className="sticky top-0 z-20 border-b border-[#241533]/15 bg-white/90 backdrop-blur-lg">
                     <div className="mx-auto grid min-h-[66px] w-full max-w-[1240px] grid-cols-[1fr_auto] items-center px-[19px] md:min-h-[76px] md:grid-cols-[1fr_auto_1fr] md:px-6 lg:px-9">
@@ -27,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                             <div className="hidden flex-col leading-[1.15] sm:flex">
                                 <strong className="text-md">Mykhailo Huseinov</strong>
                                 <small className="mt-1 text-[9px] tracking-[0.1em] text-[#746a7d] uppercase">
-                                    Kandidat til elevrådsleder
+                                    Kandidat til elevrådsrepresentant
                                 </small>
                             </div>
                         </Link>
@@ -55,7 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                             className="hidden min-h-[42px] items-center justify-self-end rounded-md bg-[#6f00ff] px-[21px] text-xs font-bold text-white transition-transform hover:-translate-y-0.5 md:inline-flex"
                             href="/#stem"
                         >
-                            Stem på fredag <span className="ml-[18px]">↗</span>
+                            Stem Gympartiet <span className="ml-[18px]">↗</span>
                         </Link>
                     </div>
                 </header>
@@ -69,7 +67,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                                 MH
                             </span>
                             <p className="m-0 text-xl leading-[1.3] font-medium tracking-[-0.025em]">
-                                For et mer aktivt hverdag.
+                                Mer aktivitet. Mer energi. Stem Gympartiet.
                             </p>
                         </div>
                         <div className="flex flex-col items-start gap-[11px]">
@@ -94,7 +92,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                                 myhua001@osloskolen.no
                             </a>
                             <Link className="mt-2 border-b border-white/40 pb-1 text-xs text-white/70" href="/#stem">
-                                Stem på fredag ↗
+                                Stem Gympartiet ↗
                             </Link>
                         </div>
                     </div>

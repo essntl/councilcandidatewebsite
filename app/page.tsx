@@ -1,20 +1,23 @@
+"use client";
 import Link from "next/link";
+import SplitText from "@/components/SplitText";
+import AnimatedContent from "@/components/AnimatedContent";
 
 const priorities = [
     {
         number: "01",
-        title: "En skolehverdag som fungerer",
-        text: "Bedre informasjonsflyt, tydeligere elevmedvirkning og praktiske løsninger på det vi møter hver dag.",
+        title: "Mer aktivitet i skolehverdagen",
+        text: "Flere enkle og inkluderende aktiviteter som gir energi, bevegelse og gode pauser i skoledagen.",
     },
     {
         number: "02",
-        title: "Mer plass til fellesskapet",
-        text: "Flere inkluderende arrangementer og møteplasser der alle kan finne sin plass, på tvers av trinn og interesser.",
+        title: "Arrangementer som engasjerer",
+        text: "Turneringer, utfordringer og sosiale arrangementer som er morsomme å delta på og enkle å bli med på.",
     },
     {
         number: "03",
-        title: "Elevenes stemme, hele året",
-        text: "Elevrådet skal være synlig, tilgjengelig og åpent om hva vi jobber med og hva vi faktisk får gjennomført.",
+        title: "Et fellesskap med energi",
+        text: "Det skal være lett å komme med ideer og skape aktiviteter som samler flere på tvers av klasser og interesser.",
     },
 ];
 
@@ -38,25 +41,38 @@ export default function Home() {
                     className="absolute inset-0 bg-linear-to-r from-black/95 via-black/75 to-black/45"
                     aria-hidden="true"
                 />
-                <div className="relative z-10 mx-auto flex min-h-[800px] w-full max-w-[1240px] flex-col px-[19px] pt-16 md:grid md:min-h-[calc(100svh-76px)] md:grid-cols-[1.1fr_0.75fr] md:items-center md:gap-[35px] md:px-6 md:py-[54px] lg:grid-cols-[1.15fr_0.72fr] lg:gap-[clamp(30px,6vw,90px)] lg:px-9">
+                <AnimatedContent className="relative z-10 mx-auto flex min-h-[800px] w-full max-w-[1240px] flex-col px-[19px] pt-16 md:grid md:min-h-[calc(100svh-76px)] md:grid-cols-[1.1fr_0.75fr] md:items-center md:gap-[35px] md:px-6 md:py-[54px] lg:grid-cols-[1.15fr_0.72fr] lg:gap-[clamp(30px,6vw,90px)] lg:px-9">
                     <div className="relative z-10 max-w-[700px]">
-                        <p className="mb-6 flex items-center gap-3 text-[10px] font-bold tracking-[0.15em] text-white/70 uppercase before:h-px before:w-7 before:bg-current">
-                            Mykhailo Huseinov
-                        </p>
+                        <SplitText
+                            className="mb-6 flex items-center gap-3 text-[10px] font-bold tracking-[0.15em] text-white/70 uppercase before:h-px before:w-7 before:bg-current"
+                            delay={35}
+                            duration={0.8}
+                            from={{ opacity: 0, y: 16 }}
+                            rootMargin="0px"
+                            splitType="chars"
+                            text="Mykhailo Huseinov · Gympartiet"
+                            textAlign="left"
+                        />
                         <h1 className="m-0 text-[48px] leading-[0.98] font-semibold tracking-[-0.05em] md:text-[clamp(52px,6.6vw,94px)]">
-                            En tydelig stemme.
-                            <span className="block text-[#dec7ff]">Et sterkere fellesskap.</span>
+                            Stem Gympartiet.
+                            <span className="block text-[#dec7ff]">Mer aktivitet. Mer energi.</span>
                         </h1>
-                        <p className="my-[30px] max-w-[560px] text-sm leading-[1.6] text-white/80 md:text-base md:leading-[1.7]">
-                            Jeg heter Mykhailo Huseinov, og jeg stiller til valg fordi gode ideer fortjener mer enn bare
-                            å bli hørt. De fortjener å bli gjort.
-                        </p>
+                        <SplitText
+                            className="my-[30px] max-w-[560px] text-sm leading-[1.6] text-white/80 md:text-base md:leading-[1.7]"
+                            delay={24}
+                            duration={0.9}
+                            from={{ opacity: 0, y: 22 }}
+                            rootMargin="0px"
+                            splitType="words"
+                            text="Jeg brenner for trening, aktivitet og arrangementer som får flere med. Med Gympartiet vil jeg gjøre skolehverdagen mer engasjerende."
+                            textAlign="left"
+                        />
                         <div className="flex items-center gap-5 md:gap-7">
                             <a
                                 className="inline-flex min-h-12 items-center justify-center gap-[18px] rounded-md bg-white px-[21px] text-xs font-bold text-[#241533] transition hover:-translate-y-0.5 hover:bg-violet-100"
                                 href="#stem"
                             >
-                                Stem på fredag <ArrowIcon />
+                                Stem Gympartiet <ArrowIcon />
                             </a>
                             <Link
                                 className="border-b border-current pb-1 text-xs font-bold text-white/90"
@@ -73,7 +89,7 @@ export default function Home() {
                     >
                         <div className="absolute inset-0 bg-[url('/hero.jpg')] bg-cover bg-bottom bg-no-repeat saturate-[0.62] contrast-[1.03] after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:from-65% after:to-[#310070]/60 md:bg-top" />
                     </div>
-                </div>
+                </AnimatedContent>
             </section>
 
             <section className="mx-auto w-full max-w-[1240px] px-[19px] py-[76px] md:px-6 md:py-[110px] lg:px-9">
@@ -82,12 +98,12 @@ export default function Home() {
                 </p>
                 <div className="grid gap-7 md:grid-cols-[1.25fr_0.65fr] md:gap-[11%]">
                     <h2 className="m-0 text-[clamp(40px,4.8vw,66px)] leading-[1.06] font-semibold tracking-[-0.045em]">
-                        Skolen blir bedre når vi bygger den sammen.
+                        Mer aktivitet gir en skolehverdag med mer energi.
                     </h2>
                     <div className="flex flex-col items-start justify-between">
                         <p className="my-1 max-w-xl text-[15px] leading-[1.75] text-[#746a7d] md:mb-8">
-                            Et godt elevråd handler ikke om én person med alle svarene. Det handler om å lytte, samle
-                            folk og følge opp det vi blir enige om.
+                            Gympartiet vil skape flere aktiviteter og arrangementer som er åpne, morsomme og enkle å
+                            delta på, enten du trener mye eller bare vil være med.
                         </p>
                         <Link
                             className="mt-7 inline-flex items-center gap-2 border-b border-current pb-1 text-xs font-bold md:mt-0"
@@ -144,12 +160,12 @@ export default function Home() {
                             Valget er fredag
                         </p>
                         <h2 className="m-0 text-[clamp(44px,5.5vw,76px)] leading-[1.06] font-semibold tracking-[-0.045em]">
-                            Stem Mykhailo Huseinov.
+                            Stem Gympartiet.
                         </h2>
                     </div>
                     <div className="max-w-[330px] border-l border-white/30 pl-7">
                         <p className="mb-[22px] text-[15px] leading-[1.65] text-white/75">
-                            Gå inn på skolens valgside på fredag og bruk stemmen din.
+                            Stem på Mykhailo og Gympartiet for en mer aktiv og engasjerende skolehverdag.
                         </p>
                         <span className="text-[9px] tracking-[0.14em] uppercase">Elevrådsvalget 2026</span>
                     </div>
